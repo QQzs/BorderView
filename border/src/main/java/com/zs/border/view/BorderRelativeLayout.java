@@ -1,14 +1,5 @@
 package com.zs.border.view;
 
-/**
- * Created by zs
- * Date：2017年 11月 21日
- * Time：10:15
- * —————————————————————————————————————
- * About:
- * —————————————————————————————————————
- */
-
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -24,12 +15,13 @@ import android.widget.RelativeLayout;
 import com.zs.border.R;
 import com.zs.border.util.DrawableUtil;
 
-
 /**
- * 带边框属性的RelativeLayout
- *
- * @author zs
- * @date 2017/21/11
+ * Created by zs
+ * Date：2017年 11月 21日
+ * Time：10:15
+ * —————————————————————————————————————
+ * About: 带边框属性的RelativeLayout
+ * —————————————————————————————————————
  */
 public class BorderRelativeLayout extends RelativeLayout {
 
@@ -56,12 +48,12 @@ public class BorderRelativeLayout extends RelativeLayout {
 
         // 读取属性值
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.BorderTextView);
-        strokeWidth = ta.getDimensionPixelSize(R.styleable.BorderTextView_strokeWidth, 0);
-        cornerRadius = ta.getDimensionPixelSize(R.styleable.BorderTextView_cornerRadius, 0);
-        strokeColor = ta.getColor(R.styleable.BorderTextView_strokeColor, Color.TRANSPARENT);
         contentColor = ta.getColor(R.styleable.BorderTextView_contentBackColor, Color.TRANSPARENT);
         pressedColor = ta.getColor(R.styleable.BorderTextView_contentPressedColor, contentColor);
         enableColor = ta.getColor(R.styleable.BorderTextView_enableBackColor, Color.parseColor("#999999"));
+        strokeWidth = ta.getDimensionPixelSize(R.styleable.BorderTextView_strokeWidth, 0);
+        strokeColor = ta.getColor(R.styleable.BorderTextView_strokeColor, Color.TRANSPARENT);
+        cornerRadius = ta.getDimensionPixelSize(R.styleable.BorderTextView_cornerRadius, 0);
         ta.recycle();
         initView();
         //设置调用onDraw方法
@@ -84,10 +76,12 @@ public class BorderRelativeLayout extends RelativeLayout {
         // 设置画笔颜色
         mPaint.setColor(strokeColor);
         // 画空心圆角矩形
-        mRectF.left = mRectF.top = 0.5f * strokeWidth;
-        mRectF.right = getMeasuredWidth() - 0.5f * strokeWidth;
-        mRectF.bottom = getMeasuredHeight() - 0.5f * strokeWidth;
-        canvas.drawRoundRect(mRectF, cornerRadius, cornerRadius, mPaint);
+        if (strokeWidth > 0){
+            mRectF.left = mRectF.top = 0.5f * strokeWidth;
+            mRectF.right = getMeasuredWidth() - 0.5f * strokeWidth;
+            mRectF.bottom = getMeasuredHeight() - 0.5f * strokeWidth;
+            canvas.drawRoundRect(mRectF, cornerRadius, cornerRadius, mPaint);
+        }
     }
 
     /**

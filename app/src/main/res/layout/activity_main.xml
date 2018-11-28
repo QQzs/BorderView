@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <com.zs.border.view.BorderTextView
         android:layout_width="200dp"
         android:layout_height="50dp"
         app:contentBackColor="@color/colorPrimary"
-        app:contentPressedColor="@color/colorPrimaryDark"
-        app:cornerRadius="10dp"
-        app:strokeWidth="2dp"
+        app:contentPressedColor="#ddd"
+        app:cornerRadius="25dp"
+        app:strokeWidth="1dp"
         app:strokeColor="@color/colorAccent"
-        android:layout_margin="10dp"
+        android:layout_margin="20dp"
         android:clickable="true"/>
 
-</RelativeLayout>
+    <com.zs.border.view.BorderTextView
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        app:contentBackColor="#fff"
+        app:contentPressedColor="#ddd"
+        app:cornerRadius="25dp"
+        android:layout_margin="20dp"
+        android:clickable="true"/>
+
+</LinearLayout>
