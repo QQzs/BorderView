@@ -1,4 +1,4 @@
-package com.zs.demo.borderview;
+package com.zs.borderview;
 
 import org.junit.Test;
 
