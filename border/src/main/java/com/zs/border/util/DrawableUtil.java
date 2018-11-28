@@ -1,4 +1,4 @@
-package com.zs.demo.border.util;
+package com.zs.border.util;
 
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;

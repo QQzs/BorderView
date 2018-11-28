@@ -1,4 +1,4 @@
-package com.zs.demo.border.view;
+package com.zs.border.view;
 
 /**
  * Created by zs
@@ -22,8 +22,8 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.zs.demo.border.R;
-import com.zs.demo.border.util.DrawableUtil;
+import com.zs.border.R;
+import com.zs.border.util.DrawableUtil;
 
 /**
  * 带边框属性的TextView

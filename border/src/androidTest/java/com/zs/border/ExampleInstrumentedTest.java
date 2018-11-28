@@ -1,4 +1,4 @@
-package com.zs.demo.border;
+package com.zs.border;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.zs.demo.border.test", appContext.getPackageName());
+        assertEquals("com.zs.border.test", appContext.getPackageName());
     }
 }

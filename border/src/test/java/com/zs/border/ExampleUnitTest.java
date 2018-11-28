@@ -1,4 +1,4 @@
-package com.zs.demo.border;
+package com.zs.border;
 
 import org.junit.Test;
 
