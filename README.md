@@ -16,7 +16,7 @@ allprojects {
 ```
 2、app的build文件中引入：
 ```Java
-implementation 'com.github.QQzs:BorderView:1.0.3'
+implementation 'com.github.QQzs:BorderView:1.0.6'
 ```
 ### 代码分析
 代码逻辑很简单，圆角边框是在ondraw方法里面用画布和画笔画一个矩形的边框，形状和圆角根据属性设置。而圆角的背景，是要在代码里生成selector，代码生成并添加圆角的shape，只是把drawable文件在代码里生成，下面看完整代码。
@@ -106,10 +106,12 @@ public class BorderTextView extends TextView {
         // 设置画笔颜色
         mPaint.setColor(strokeColor);
         // 画空心圆角矩形
-        mRectF.left = mRectF.top = 0.5f * strokeWidth;
-        mRectF.right = getMeasuredWidth() - 0.5f * strokeWidth;
-        mRectF.bottom = getMeasuredHeight() - 0.5f * strokeWidth;
-        canvas.drawRoundRect(mRectF, cornerRadius, cornerRadius, mPaint);
+        if (strokeWidth > 0){
+            mRectF.left = mRectF.top = 0.5f * strokeWidth;
+            mRectF.right = getMeasuredWidth() - 0.5f * strokeWidth;
+            mRectF.bottom = getMeasuredHeight() - 0.5f * strokeWidth;
+            canvas.drawRoundRect(mRectF, cornerRadius, cornerRadius, mPaint);
+        }
     }
 
 
